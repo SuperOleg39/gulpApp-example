@@ -5,11 +5,7 @@
 Install project:
 ```
 git clone https://github.com/SuperOleg39/gulpApp-example.git
-```
-```
 npm install
-```
-```
 gulp build
 ```
 
@@ -29,7 +25,7 @@ gulp clean
 ```
 
 
-###Or all together
+Or all together
 ```
 gulp
 ```
