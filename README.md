@@ -3,19 +3,33 @@
 [![Build Status](https://travis-ci.org/SuperOleg39/gulpApp-example.svg?branch=master)](https://travis-ci.org/SuperOleg39/gulpApp-example)
 
 Install project:
-> git clone https://github.com/SuperOleg39/gulpApp-example.git
-> npm install
-> gulp build
+```
+git clone https://github.com/SuperOleg39/gulpApp-example.git
+```
+```
+npm install
+```
+```
+gulp build
+```
 
 Watch changes:
-> gulp webserver
+```
+gulp webserver
+```
 
 Create a server:
-> gulp webserver
+```
+gulp webserver
+```
 
 Clean build project:
-> gulp clean
+```
+gulp clean
+```
 
 
 ###Or all together
-> gulp
+```
+gulp
+```
