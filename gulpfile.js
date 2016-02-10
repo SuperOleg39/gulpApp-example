@@ -12,7 +12,7 @@ var gulp        = require('gulp'),
     pngquant    = require('imagemin-pngquant'),
     rimraf      = require('rimraf'),
     browserSync = require("browser-sync"),
-    babel       = require("gulp-babel"),
+    webpack     = require('webpack-stream'),
     reload      = browserSync.reload;
 
 var path = {
@@ -66,11 +66,7 @@ gulp.task('jade:build', function () {
 
 gulp.task('js:build', function () {
     gulp.src(path.watch.js)
-        .pipe(sourcemaps.init())
-        .pipe(babel())
-        .pipe(concat("bundle.js"))
-        .pipe(uglify())
-        .pipe(sourcemaps.write())
+        .pipe(webpack( require('./webpack.config.js') ))
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 });
