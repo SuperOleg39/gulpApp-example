@@ -19,3 +19,11 @@ fetch('../index.html')
     console.log(222)
     document.body.innerHTML = body
   })
+
+
+import { Events } from './module'
+
+import Dance from './module'
+
+let event = new Events('Oleg');
+let dance = new Dance('fish');
