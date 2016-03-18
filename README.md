@@ -4,14 +4,15 @@
 
 Install project:
 ```
-git clone https://github.com/SuperOleg39/gulpApp-example.git
+git clone https://github.com/SuperOleg39/Zioniti.git
+npm uninstall gulp -g
+npm install gulpjs/gulp-cli#4.0 -g
 npm install
-gulp build
 ```
 
-Watch changes:
+Build a project:
 ```
-gulp webserver
+gulp build
 ```
 
 Create a server:
@@ -19,13 +20,29 @@ Create a server:
 gulp webserver
 ```
 
+Watch changes:
+```
+gulp watch
+```
+
 Clean build project:
 ```
 gulp clean
 ```
 
-
 Or all together
 ```
 gulp
+```
+
+
+Development mode
+```
+set NODE_ENV=development&&gulp
+```
+
+
+Production build
+```
+set NODE_ENV=production&&gulp build
 ```

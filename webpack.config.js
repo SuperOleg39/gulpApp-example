@@ -3,42 +3,22 @@
 const webpack = require('webpack');
 const path    = require('path');
 
-module.exports = {
-  context: require('path').join(__dirname, '/js'),
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
-  // entry: "./big-calendar",
+let options = {
 
   output: {
-    path:     __dirname + '/js',
-    filename: "bundle.js"
+    path:     __dirname + "/build/js",
+    filename: "[name].bundle.js"
   },
 
-  // watch: true,
+  watch:   isDevelopment,
 
-  // watchOptions: {
-  //   aggregateTimeout: 100
-  // },
-
-  devtool: "cheap-inline-module-source-map",
-
-  resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions:         ['', '.js']
-  },
-
-  resolveLoader: {
-    modulesDirectories: ['node_modules'],
-    moduleTemplates:    ['*-loader', '*'],
-    extensions:         ['', '.js']
-  },
+  devtool: isDevelopment ? 'cheap-module-inline-source-map' : null,
 
   plugins: [
-    new webpack.ProvidePlugin({
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true
-    })
+    new webpack.optimize.DedupePlugin(),
+    new webpack.NoErrorsPlugin()
   ],
 
   module: {
@@ -54,3 +34,15 @@ module.exports = {
 
   }
 };
+
+if (!isDevelopment) {
+  options.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    minimize: true,
+    compress: {
+      warnings: false
+    }
+  }));
+
+}
+
+module.exports = options;

@@ -10,20 +10,9 @@ class Module {
 
 let app = new Module( 'Build' );
 
+import { Events } from './modules/module'
 
-fetch('../index.html')
-  .then(function(response) {
-    console.log(111)
-    return response.text()
-  }).then(function(body) {
-    console.log(222)
-    document.body.innerHTML = body
-  })
-
-
-import { Events } from './module'
-
-import Dance from './module'
+import Dance from './modules/module'
 
 let event = new Events('Oleg');
 let dance = new Dance('fish');

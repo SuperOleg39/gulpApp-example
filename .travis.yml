@@ -1,5 +1,10 @@
 language: node_js
 node_js:
-  - "5.5.0"
-before_script:
+  - "5.8.0"
+before_install:
+  - npm install gulpjs/gulp-cli#4.0 -g
+install:
+  - npm install
+after_success:
+  - export NODE_ENV=production
   - gulp build
