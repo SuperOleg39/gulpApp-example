@@ -2,7 +2,20 @@
 
 [![Build Status](https://travis-ci.org/SuperOleg39/gulpApp-example.svg?branch=master)](https://travis-ci.org/SuperOleg39/gulpApp-example)
 
-Install project:
+## About project:
+Modern app boilerplate.
+Use:
+- Stylus preprocessor;
+- Jade templates;
+- Webpack only for JS files;
+- Minify css, html, js and images.
+
+Important!
+Build tasks work with files in in the root directory, path example - ``` 'src/js/*.js' ``` if you have main.js and admin.js in this directory, it is entry points.
+
+Watch tasks work with all files in directory, path example - ``` 'src/html/**/*.jade' ```
+
+## Install project:
 ```
 git clone https://github.com/SuperOleg39/Zioniti.git
 npm uninstall gulp -g
@@ -10,19 +23,11 @@ npm install gulpjs/gulp-cli#4.0 -g
 npm install
 ```
 
-Build a project:
+## Gulp tasks:
+
+Start a work with project:
 ```
 gulp build
-```
-
-Create a server:
-```
-gulp webserver
-```
-
-Watch changes:
-```
-gulp watch
 ```
 
 Clean build project:
@@ -30,17 +35,10 @@ Clean build project:
 gulp clean
 ```
 
-Or all together
-```
-gulp
-```
-
-
 Development mode
 ```
 set NODE_ENV=development&&gulp
 ```
-
 
 Production build
 ```
