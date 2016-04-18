@@ -8,11 +8,11 @@ class Module {
     }
 }
 
-let app = new Module( 'Build' );
+const app = new Module( 'Build' );
 
 import { Events } from './modules/module'
 
 import Dance from './modules/module'
 
-let event = new Events('Oleg');
-let dance = new Dance('fish');
+const event = new Events('Oleg');
+const dance = new Dance('fish');
