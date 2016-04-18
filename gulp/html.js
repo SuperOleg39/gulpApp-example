@@ -1,11 +1,12 @@
 'use strict';
 
-const gulp            = require('gulp');
-const gulpLoadPlugins = require('gulp-load-plugins');
-const browserSync     = require('browser-sync');
+import gulp            from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
+import browserSync     from 'browser-sync';
 
-const path =  require( "./path");
-const $    = gulpLoadPlugins({
+import path from './path';
+
+const $ = gulpLoadPlugins({
     rename: {
         'gulp-html-minifier': 'htmlmin'
     }
@@ -14,7 +15,7 @@ const $    = gulpLoadPlugins({
 const reload = browserSync.reload;
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
-gulp.task('jade:build', function() {
+gulp.task('jade:build', () => {
     return gulp.src(path.src.html)
         .pipe($.jade({
             pretty: true

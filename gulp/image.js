@@ -1,15 +1,15 @@
 'use strict';
 
-const gulp            = require('gulp');
-const imagemin        = require('gulp-imagemin');
-const pngquant        = require('imagemin-pngquant');
-const browserSync     = require('browser-sync');
+import gulp        from 'gulp';
+import imagemin    from 'gulp-imagemin';
+import pngquant    from 'imagemin-pngquant';
+import browserSync from 'browser-sync';
 
-const path =  require( "./path");
+import path from './path';
 
 const reload = browserSync.reload;
 
-gulp.task('image:build', function() {
+gulp.task('image:build', () => {
     return gulp.src(path.src.img, {since: gulp.lastRun('image:build')}) 
         .pipe(imagemin({
             progressive: true,

@@ -1,18 +1,7 @@
-let a = 1;
+'use strict!';
 
-class Module {
-    constructor( name ) {
-        this.moduleName = name;
+import { Calculator } from './modules/module'
 
-        console.log( this.moduleName );
-    }
-}
+const calculator = new Calculator();
 
-const app = new Module( 'Build' );
-
-import { Events } from './modules/module'
-
-import Dance from './modules/module'
-
-const event = new Events('Oleg');
-const dance = new Dance('fish');
+console.log( calculator.multiplication(2, 3, 5, 15) );

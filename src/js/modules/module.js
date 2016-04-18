@@ -1,13 +1,29 @@
-console.log('what?')
+'use strict!';
 
-export class Events {
-    constructor( name ) {
-        console.log(`You're name is ${name}`)
-    }
-}
+export class Calculator {
 
-export default class Dance {
-    constructor( name ) {
-        console.log(`You're dance lika a ${name}`)
+    addition( ...numbers ) {
+        return numbers.reduce( (sum, current) => {
+            return sum + current;
+        });
     }
+
+    subtraction( ...numbers ) {
+        return numbers.reduce( (sum, current) => {
+            return sum - current;
+        });
+    }
+
+    multiplication( ...numbers ) {
+        return numbers.reduce( (sum, current) => {
+            return sum * current;
+        });
+    }
+
+    division( ...numbers ) {
+        return numbers.reduce( (sum, current) => {
+            return sum / current;
+        });
+    }
+
 }

@@ -1,16 +1,16 @@
 'use strict';
 
-const gulp        = require('gulp');
-const gulplog     = require('gulplog');
-const webpack     = require('webpack-stream');
-const named       = require('vinyl-named');
-const browserSync = require('browser-sync');
+import gulp        from 'gulp';
+import gulplog     from 'gulplog';
+import webpack     from 'webpack-stream';
+import named       from 'vinyl-named';
+import browserSync from 'browser-sync';
 
-const path =  require( "./path");
+import path from './path';
 
 const reload = browserSync.reload;
 
-gulp.task('webpack:build', function(callback) {
+gulp.task('webpack:build', callback => {
 
     let firstBuildReady = false;
 
@@ -19,16 +19,18 @@ gulp.task('webpack:build', function(callback) {
 
         if (err) return;
 
-        gulplog[stats.hasErrors() ? 'error' : 'info'](stats.toString({
-            colors: true
-        }));
+        gulplog[stats.hasErrors() ? 'error' : 'info'](
+            stats.toString({
+                colors: true
+            })
+        );
     }
 
     return gulp.src(path.src.js)
         .pipe(named())
         .pipe(webpack( require('../webpack.config.js'), null, done ))
         .pipe(gulp.dest(path.build.js))
-        .on('data', function() {
+        .on('data', () => {
             if (firstBuildReady) {
                 callback();
             }

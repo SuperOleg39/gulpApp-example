@@ -1,13 +1,13 @@
 'use strict';
 
-const gulp        = require('gulp');
-const browserSync = require('browser-sync');
+import gulp        from 'gulp';
+import browserSync from 'browser-sync';
 
-const path =  require( "./path");
+import path from './path';
 
 const reload = browserSync.reload;
 
-gulp.task('fonts:build', function() {
+gulp.task('fonts:build', () => {
     return gulp.src(path.src.fonts, {since: gulp.lastRun('fonts:build')})
         .pipe(gulp.dest(path.build.fonts))
 });

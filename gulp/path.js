@@ -1,4 +1,4 @@
-module.exports = {
+export default {
         build: {
             html:    'build/',
             js:      'build/js/',
@@ -21,4 +21,4 @@ module.exports = {
             img:     'src/img/**/*.*'
         },
         clean: './build'
-    }
+    };

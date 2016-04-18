@@ -1,7 +1,7 @@
 'use strict';
 
-const gulp        = require('gulp');
-const browserSync = require('browser-sync');
+import gulp        from 'gulp';
+import browserSync from 'browser-sync';
 
 const config = {
     server: {
@@ -13,6 +13,6 @@ const config = {
     logPrefix: "Frontend"
 };
 
-gulp.task('webserver', function() {
+gulp.task('webserver', () => {
     browserSync(config);
 });
