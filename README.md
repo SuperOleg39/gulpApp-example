@@ -10,7 +10,7 @@ Use:
 - Webpack only for JS files;
 - Minify css, html, js and images;
 - Browser Sync;
-- Unit tests with Mocha and Chai, width Karma runner in Phantom js browser;
+- Unit tests with Mocha and Chai, with Karma runner in Phantom js browser;
 
 Important!
 Build tasks work with files in in the root directory, path example - ``` 'src/js/*.js' ``` if you have main.js and admin.js in this directory, it is entry points.

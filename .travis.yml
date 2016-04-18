@@ -7,4 +7,5 @@ install:
   - npm install
 after_success:
   - export NODE_ENV=production
+  - npm test
   - gulp build
