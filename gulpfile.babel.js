@@ -3,15 +3,29 @@
 import gulp        from 'gulp';
 import requireDir  from 'require-dir';
 import browserSync from 'browser-sync';
+import karma       from 'karma';
 
 import path from './gulp/path';
-console.log(path)
 
 const reload = browserSync.reload;
+
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+
+const Server = karma.Server;
 
 requireDir('./gulp', {
     recurse: true
 });
+
+
+gulp.task('test', done => {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        autoWatch: isDevelopment,
+        singleRun: !isDevelopment,
+    }, done).start();
+});
+
 
 gulp.task('build', gulp.series(
     'clean',

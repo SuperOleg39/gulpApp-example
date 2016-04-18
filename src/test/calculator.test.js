@@ -5,7 +5,7 @@ import chai from 'chai';
 chai.should();
 
 
-import { Calculator } from '../src/js/modules/module'
+import { Calculator } from '../js/modules/calculator'
 
 
 describe('module calculator', () => {

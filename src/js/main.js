@@ -1,6 +1,6 @@
 'use strict!';
 
-import { Calculator } from './modules/module'
+import { Calculator } from './modules/calculator'
 
 const calculator = new Calculator();
 
