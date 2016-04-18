@@ -5,7 +5,7 @@ before_install:
   - npm install gulpjs/gulp-cli#4.0 -g
 install:
   - npm install
-after_success:
   - export NODE_ENV=production
+after_success:
   - npm test
   - gulp build

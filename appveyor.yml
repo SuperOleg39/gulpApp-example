@@ -5,8 +5,8 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - npm install gulpjs/gulp-cli#4.0 -g
   - npm install
+  - set NODE_ENV=production
 
 build_script:
-  - set NODE_ENV=production
   - npm test
   - gulp build
