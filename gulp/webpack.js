@@ -4,11 +4,8 @@ import gulp        from 'gulp';
 import gulplog     from 'gulplog';
 import webpack     from 'webpack-stream';
 import named       from 'vinyl-named';
-import browserSync from 'browser-sync';
 
 import path from './path';
-
-const reload = browserSync.reload;
 
 gulp.task('webpack:build', callback => {
 
@@ -34,6 +31,5 @@ gulp.task('webpack:build', callback => {
             if (firstBuildReady) {
                 callback();
             }
-        })
-        .pipe(reload({stream: true}));
+        });
 });

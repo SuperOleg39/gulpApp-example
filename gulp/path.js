@@ -18,7 +18,8 @@ export default {
             js:      'src/js/**/*.js',
             css:     'src/css/**/*.styl',
             fonts:   'src/fonts/**/*.*',
-            img:     'src/img/**/*.*'
+            img:     'src/img/**/*.*',
+            all:     'build/**/*.*'
         },
         clean: './build'
     };
