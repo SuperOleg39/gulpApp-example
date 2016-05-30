@@ -47,8 +47,6 @@ gulp.task('watch', () => {
     gulp.watch(path.watch.img,    gulp.series('image:build'));
 
     gulp.watch(path.watch.fonts,  gulp.series('fonts:build'));
-
-    gulp.watch(path.build.js,     reload);
 });
 
 
