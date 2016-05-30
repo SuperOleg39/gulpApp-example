@@ -33,7 +33,7 @@ module.exports = function (config) {
         webpackMiddleware: {
             noInfo: true
         },
- 
+
         plugins: [
             'karma-webpack',
             'karma-phantomjs-launcher',
