@@ -23,18 +23,26 @@ class User extends EventEmitter {
     constructor(id, subject) {
         super();
         this.id = id;
-        this.addListener("create", (data) => this.onChange(data));
+
+        const self = this;
+
+        this.addListener("create", (data) => self.onChange(data));
     }
 
     onChange(data) {
+        const self = this;
+
         console.log(`${this.id} notified of change:`, data);
-        this.removeListener("create", (data) => this.onChange(data));
+
+        this.removeListener("create", (data) => self.onChange(data));
     }
 }
 
 const user = new User('Oleg', observable);
 
 user.emit("create", { position: 'proger' });
+user.emit("create", { position: 'designer' });
+user.emit("create", { position: 'designer' });
 user.emit("create", { position: 'designer' });
 
 

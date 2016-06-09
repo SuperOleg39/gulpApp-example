@@ -4,6 +4,10 @@ const isFunction = function(obj) {
     return typeof obj == 'function' || false;
 }
 
+const functionsAreEqual = function(listener, callback) {
+    return listener.toString().replace(/ /g,'') == callback.toString().replace(/ /g,'');
+}
+
 export class EventEmitter {
     constructor() {
         this.listeners = new Map();
@@ -25,7 +29,7 @@ export class EventEmitter {
                 /*
                  * TODO: after Babel compilation, callback not equal listener
                  */
-                return (isFunction(listener) && listener == callback) ? i = index : i;
+                return (isFunction(listener) && functionsAreEqual(listener, callback)) ? i = index : i;
             }, -1);
 
             if (index > -1) {
