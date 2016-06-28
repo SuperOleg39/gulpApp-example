@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "5.8.0"
+before_install:
+  - npm rm -g gulp
+  - npm install -g gulp-cli
 install:
   - npm install
   - export NODE_ENV=production

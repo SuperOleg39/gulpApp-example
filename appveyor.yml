@@ -3,6 +3,8 @@ environment:
 
 install:
   - ps: Install-Product node $env:nodejs_version
+  - npm rm -g gulp
+  - npm install -g gulp-cli
   - npm install
   - set NODE_ENV=production
 

@@ -20,6 +20,8 @@ Watch tasks work with all files in directory, path example - ``` 'src/html/**/*.
 ## Install project:
 ```
 git clone https://github.com/SuperOleg39/gulpApp-example.git
+npm rm -g gulp
+npm install -g gulp-cli
 npm install
 ```
 
