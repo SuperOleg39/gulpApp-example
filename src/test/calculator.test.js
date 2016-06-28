@@ -5,12 +5,11 @@ import chai from 'chai';
 chai.should();
 
 
-import { Calculator } from '../js/modules/calculator'
+import { Calculator } from '../js/modules/calculator';
 
 
 describe('module calculator', () => {
-
-    const calculator = new Calculator();
+    let calculator = new Calculator();
 
     it('return sum of arguments', () => {
         let sum = calculator.addition(2, 3);
@@ -24,7 +23,7 @@ describe('module calculator', () => {
         sum = calculator.addition(2);
         sum.should.be.a('number');
         sum.should.equal(2);
-    })
+    });
 
     it('return difference of arguments', () => {
         let sum = calculator.subtraction(5, 2);
@@ -38,7 +37,7 @@ describe('module calculator', () => {
         sum = calculator.subtraction(2);
         sum.should.be.a('number');
         sum.should.equal(2);
-    })
+    });
 
     it('return product of arguments', () => {
         let sum = calculator.multiplication(2, 5);
@@ -52,7 +51,7 @@ describe('module calculator', () => {
         sum = calculator.multiplication(2);
         sum.should.be.a('number');
         sum.should.equal(2);
-    })
+    });
 
     it('return ratio of arguments', () => {
         let sum = calculator.division(10, 2);
@@ -66,6 +65,5 @@ describe('module calculator', () => {
         sum = calculator.division(2);
         sum.should.be.a('number');
         sum.should.equal(2);
-    })
-
+    });
 });

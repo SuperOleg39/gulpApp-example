@@ -2,26 +2,26 @@
 
 export class Calculator {
 
-    addition( ...numbers ) {
-        return numbers.reduce( (sum, current) => {
+    addition(...numbers) {
+        return numbers.reduce((sum, current) => {
             return sum + current;
         });
     }
 
-    subtraction( ...numbers ) {
-        return numbers.reduce( (sum, current) => {
+    subtraction(...numbers) {
+        return numbers.reduce((sum, current) => {
             return sum - current;
         });
     }
 
-    multiplication( ...numbers ) {
-        return numbers.reduce( (sum, current) => {
+    multiplication(...numbers) {
+        return numbers.reduce((sum, current) => {
             return sum * current;
         });
     }
 
-    division( ...numbers ) {
-        return numbers.reduce( (sum, current) => {
+    division(...numbers) {
+        return numbers.reduce((sum, current) => {
             return sum / current;
         });
     }

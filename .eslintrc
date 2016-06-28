@@ -1,0 +1,10 @@
+extends: airbnb
+
+env:
+  mocha: true
+
+rules:
+    no-multi-spaces:  off
+    indent:           [error, 4]
+    arrow-body-style: off
+    prefer-const:     off

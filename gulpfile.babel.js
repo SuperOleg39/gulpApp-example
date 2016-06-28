@@ -4,6 +4,7 @@ import gulp        from 'gulp';
 import requireDir  from 'require-dir';
 import browserSync from 'browser-sync';
 import karma       from 'karma';
+import eslint      from 'eslint/lib/cli';
 
 import path from './gulp/path';
 
@@ -18,11 +19,17 @@ requireDir('./gulp', {
 });
 
 
+gulp.task('lint', done => {
+    eslint.execute('src/**/*.js');
+    done();
+});
+
+
 gulp.task('test', done => {
     new Server({
         configFile: __dirname + '/karma.conf.js',
         autoWatch: isDevelopment,
-        singleRun: !isDevelopment,
+        singleRun: !isDevelopment
     }, done).start();
 });
 
@@ -47,6 +54,8 @@ gulp.task('watch', () => {
     gulp.watch(path.watch.img,    gulp.series('image:build'));
 
     gulp.watch(path.watch.fonts,  gulp.series('fonts:build'));
+
+    gulp.watch(path.watch.js,     gulp.series('lint'));
 });
 
 

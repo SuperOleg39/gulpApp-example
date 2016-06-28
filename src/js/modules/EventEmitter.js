@@ -1,12 +1,12 @@
 'use strict!';
 
-const isFunction = function(obj) {
-    return typeof obj == 'function' || false;
-}
+let isFunction = function (obj) {
+    return typeof obj === 'function' || false;
+};
 
-const functionsAreEqual = function(listener, callback) {
-    return listener.toString().replace(/ /g,'') == callback.toString().replace(/ /g,'');
-}
+let functionsAreEqual = function (listener, callback) {
+    return listener.toString().replace(/ /g, '') === callback.toString().replace(/ /g, '');
+};
 
 export class EventEmitter {
     constructor() {
@@ -14,22 +14,29 @@ export class EventEmitter {
     }
 
     addListener(label, callback) {
-        this.listeners.has(label) || this.listeners.set(label, []);
+        if (!this.listeners.has(label)) {
+            this.listeners.set(label, []);
+        }
 
         this.listeners.get(label).push(callback);
     }
 
     removeListener(label, callback) {
-        const listeners = this.listeners.get(label);
-
+        let listeners = this.listeners.get(label);
         let index;
 
         if (listeners && listeners.length) {
-            index = listeners.reduce((i, listener, index) => {
+            listeners.reduce((i, listener) => {
                 /*
                  * TODO: after Babel compilation, callback not equal listener
                  */
-                return (isFunction(listener) && functionsAreEqual(listener, callback)) ? i = index : i;
+                if (isFunction(listener) && functionsAreEqual(listener, callback)) {
+                    index = i;
+
+                    return index;
+                }
+
+                return i;
             }, -1);
 
             if (index > -1) {
@@ -44,7 +51,7 @@ export class EventEmitter {
     }
 
     emit(label, ...args) {
-        const listeners = this.listeners.get(label);
+        let listeners = this.listeners.get(label);
 
         if (listeners && listeners.length) {
             listeners.forEach((listener) => {

@@ -15,6 +15,7 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 
 gulp.task('jade:build', () => {
     return gulp.src(path.src.html)
+        .pipe($.plumber())
         .pipe($.jade({
             pretty: true
         }))

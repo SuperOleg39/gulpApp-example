@@ -11,11 +11,12 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 
 gulp.task('stylus:build', () => {
     return gulp.src(path.src.css)
+        .pipe($.plumber())
         .pipe($.if( isDevelopment, $.sourcemaps.init() ))
         .pipe($.stylus({
             'include css': true
         }))
-        .pipe($.autoprefixer() )
+        .pipe($.autoprefixer())
         .pipe($.if( isDevelopment, $.sourcemaps.write() ))
         .pipe($.if( !isDevelopment, $.cssnano() ))
         .pipe(gulp.dest(path.build.css));

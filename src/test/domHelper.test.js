@@ -5,15 +5,13 @@ import chai from 'chai';
 chai.should();
 
 
-import { DomHelper } from '../js/modules/domHelper'
+import { DomHelper } from '../js/modules/domHelper';
 
 
 describe('module DOM helper', () => {
-
-    const domHelper = new DomHelper();
+    let domHelper = new DomHelper();
 
     it('return DOM element', () => {
-        let div = domHelper.createRect( 'div', 'first-element' );
-    })
-
+        let div = domHelper.createRect('div', 'first-element');
+    });
 });
