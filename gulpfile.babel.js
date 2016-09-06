@@ -35,7 +35,10 @@ gulp.task('test', done => {
 
 
 gulp.task('build', gulp.series(
+    
     'clean',
+    'bump-build',
+
     gulp.parallel(
         'jade:build',
         'stylus:build',

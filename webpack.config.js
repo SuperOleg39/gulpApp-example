@@ -8,8 +8,8 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 let options = {
 
   output: {
-    path:     __dirname + "/build/js",
-    filename: "[name].bundle.js"
+    path:     __dirname + '/build/js',
+    filename: '[name].bundle.js'
   },
 
   watch:   isDevelopment,
@@ -18,7 +18,11 @@ let options = {
 
   plugins: [
     new webpack.optimize.DedupePlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+        names: ['common'],
+        minChunks: 2
+    })
   ],
 
   module: {

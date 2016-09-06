@@ -1,11 +1,11 @@
 {
-  "name": "test",
+  "name": "Gulp + Webpack boilerplate",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "gulp test"
   },
-  "main": "index.js",
+  "main": "index.html",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -24,6 +24,7 @@
     "gulp": "gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
+    "gulp-bump": "^2.4.0",
     "gulp-cli": "^1.2.1",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.0",
